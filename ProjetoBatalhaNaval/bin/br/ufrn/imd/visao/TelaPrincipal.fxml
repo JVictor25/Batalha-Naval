@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrn.imd.controle.BatalhaNavalController">
+   <center>
+      <GridPane fx:id="gridPaneInimigo" GridPane.halignment="CENTER">
+         <!-- Tabuleiro do Inimigo -->
+      </GridPane>
+   </center>
+   <bottom>
+      <GridPane fx:id="gridPaneJogador" GridPane.halignment="CENTER">
+         <!-- Tabuleiro do Jogador -->
+      </GridPane>
+   </bottom>
+</BorderPane>
