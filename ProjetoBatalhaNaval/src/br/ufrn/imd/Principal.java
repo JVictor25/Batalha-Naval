@@ -16,7 +16,7 @@ public class Principal extends Application {
         Parent root = loader.load();
 
         // Configura a cena
-        Scene scene = new Scene(root, 300, 700);
+        Scene scene = new Scene(root, 1200, 800);
 
         // Configura o palco (stage)
         primaryStage.setScene(scene);

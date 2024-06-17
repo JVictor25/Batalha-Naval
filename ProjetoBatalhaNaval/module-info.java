@@ -1,7 +1,6 @@
 module ProjetoBatalhaNaval {
 	requires javafx.controls;
 	requires javafx.fxml;
-	requires javafx.graphics;
 	
 	exports br.ufrn.imd;
 	

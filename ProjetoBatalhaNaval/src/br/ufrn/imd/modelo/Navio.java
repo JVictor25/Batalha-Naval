@@ -1,5 +1,7 @@
 package br.ufrn.imd.modelo;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,19 +9,29 @@ public abstract class Navio {
     protected int tamanho;
     protected boolean horizontal;
     protected boolean direcao; // true para direita/baixo, false para esquerda/cima
+    protected boolean posicionado;
     protected int startX;
     protected int startY;
     protected List<Coordenadas> coordenadas;
     protected boolean afundado;
+    protected List<ImageView> imagens1; // Lista de ImageView
+    protected List<ImageView> imagens2; // Lista de ImageView
+    protected List<ImageView> imagens3; // Lista de ImageView
+    protected List<ImageView> imagens4; // Lista de ImageView
 
     public Navio(int tamanho, boolean horizontal, boolean direcao, int startX, int startY) {
         this.tamanho = tamanho;
         this.horizontal = horizontal;
         this.direcao = direcao;
+        this.posicionado = false;
         this.startX = startX;
         this.startY = startY;
         this.coordenadas = new ArrayList<>(tamanho);
         this.afundado = false; // Inicialmente, o navio não está afundado
+        this.imagens1 = new ArrayList<>(tamanho); // Inicializa a lista com o tamanho do navio
+        this.imagens2 = new ArrayList<>(tamanho); // Inicializa a lista com o tamanho do navio
+        this.imagens3 = new ArrayList<>(tamanho); // Inicializa a lista com o tamanho do navio
+        this.imagens4 = new ArrayList<>(tamanho); // Inicializa a lista com o tamanho do navio
         setCoordenadas();
     }
 
@@ -97,4 +109,34 @@ public abstract class Navio {
     public void setAfundado(boolean afundado) {
         this.afundado = afundado;
     }
+
+    public List<ImageView> getImagens1() {
+        return imagens1;
+    }
+    
+    public List<ImageView> getImagens2() {
+        return imagens2;
+    }
+    
+    public List<ImageView> getImagens3() {
+        return imagens3;
+    }
+    
+    public List<ImageView> getImagens4() {
+        return imagens4;
+    }
+
+    public void setCoordenadas(List<Coordenadas> coordenadas) {
+        this.coordenadas = coordenadas;
+    }
+
+	public boolean isPosicionado() {
+		return posicionado;
+	}
+
+	public void setPosicionado(boolean posicionado) {
+		this.posicionado = posicionado;
+	}
+	public abstract void criarLists();
+	
 }
