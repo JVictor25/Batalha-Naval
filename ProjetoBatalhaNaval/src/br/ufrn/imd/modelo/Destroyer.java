@@ -3,12 +3,32 @@ package br.ufrn.imd.modelo;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * Classe que representa um destroyer em um jogo de tabuleiro ou similar,
+ * estendendo a classe abstrata Navio. Um destroyer tem um tamanho especifico
+ * e pode ser posicionado horizontalmente ou verticalmente.
+ *
+ * @author JoaoVictor
+ */
 public class Destroyer extends Navio {
+    
+    /**
+     * Constroi um destroyer com caracteristicas especificadas.
+     * 
+     * @param horizontal Indica se o destroyer será posicionado horizontalmente.
+     * @param direcao Indica a direcao do movimento do destroyer (true para direita/baixo, false para esquerda/cima).
+     * @param startX A posicao inicial X do destroyer.
+     * @param startY A posicao inicial Y do destroyer.
+     */
     public Destroyer(boolean horizontal, boolean direcao, int startX, int startY) {
         super(5, horizontal, direcao, startX, startY); // Supondo que o tamanho do Destroyer é 5
         criarLists();
     }
 
+    /**
+     * Sobrescreve o método abstrato criarLists() para definir as listas de imagens
+     * específicas para o destroyer, correspondentes aos diferentes estados visuais.
+     */
     @Override
     public void criarLists() {
         	Image image11 = new Image("file:src/resources/imagens/Destroyer11.png");

@@ -3,12 +3,32 @@ package br.ufrn.imd.modelo;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * Classe que representa um submarino em um jogo de tabuleiro ou similar,
+ * estendendo a classe abstrata Navio. Um submarino tem um tamanho especifico
+ * e pode ser posicionado horizontalmente ou verticalmente.
+ *
+ * @author JoaoVictor
+ */
 public class Submarino extends Navio {
+    
+    /**
+     * Constroi um submarino com caracteristicas especificadas.
+     * 
+     * @param horizontal Indica se o submarino será posicionado horizontalmente.
+     * @param direcao Indica a direcao do movimento do submarino (true para direita/baixo, false para esquerda/cima).
+     * @param startX A posicao inicial X do submarino.
+     * @param startY A posicao inicial Y do submarino.
+     */
     public Submarino(boolean horizontal, boolean direcao, int startX, int startY) {
         super(3, horizontal, direcao, startX, startY); // Supondo que o tamanho do Submarino é 3
         criarLists();
     }
 
+    /**
+     * Sobrescreve o metodo abstrato criarLists() para definir as listas de imagens
+     * especificas para o submarino, correspondentes aos diferentes estados visuais.
+     */
     @Override
     public void criarLists() {
         	Image image11 = new Image("file:src/resources/imagens/Submarino11.png");

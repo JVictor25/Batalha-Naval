@@ -3,14 +3,35 @@ package br.ufrn.imd.modelo;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * Classe que representa uma fragata em um jogo de tabuleiro ou similar,
+ * estendendo a classe abstrata Navio. Uma fragata tem um tamanho especifico
+ * e pode ser posicionada horizontalmente ou verticalmente.
+ *
+ * @author JoaoVictor
+ */
 public class Fragata extends Navio {
-        public Fragata(boolean horizontal, boolean direcao, int startX, int startY) {
-            super(4, horizontal, direcao, startX, startY); // Supondo que o tamanho da Fragata é 4
-            criarLists();
-        }
+    
+    /**
+     * Constroi uma fragata com caracteristicas especificadas.
+     * 
+     * @param horizontal Indica se a fragata sera posicionada horizontalmente.
+     * @param direcao Indica a direcao do movimento da fragata (true para direita/baixo, false para esquerda/cima).
+     * @param startX A posicao inicial X da fragata.
+     * @param startY A posicao inicial Y da fragata.
+     */
+    public Fragata(boolean horizontal, boolean direcao, int startX, int startY) {
+        super(4, horizontal, direcao, startX, startY); // Supondo que o tamanho da Fragata é 4
+        criarLists();
+    }
 
-        @Override
-        public void criarLists() {
+    /**
+     * Sobrescreve o metodo abstrato criarLists() para definir as listas de imagens
+     * especificas para a fragata, correspondentes aos diferentes estados visuais.
+     */
+    @Override
+    public void criarLists() {
+
 
         	Image image11 = new Image("file:src/resources/imagens/Fragata11.png");
             ImageView imageView11 = new ImageView(image11);
